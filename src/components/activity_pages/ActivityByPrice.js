@@ -50,7 +50,6 @@ const ActivityByPrice = (props) => {
                 onChange={inputTextHandler}
                 size='2'
             />
-
             <Card buttonHandler={cardButtonClickHandler} data={activityData} />
         </div>
     );
