@@ -44,7 +44,6 @@ const ActivityByPrice = (props) => {
                 min={utils.minPrice}
                 max={utils.maxPrice}
             />
-
             <input
                 type='text'
                 value={inputRange}
