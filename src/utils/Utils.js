@@ -1,8 +1,8 @@
 export const categories = {
-    random: 'Random',
-    'by-type': 'By Type',
-    'by-participants': 'By Participants',
-    'by-price': 'By Price',
+    '/random': 'Random',
+    '/by-type': 'By Type',
+    '/by-participants': 'By Participants',
+    '/by-price': 'By Price',
 };
 
 export const activityTypes = [

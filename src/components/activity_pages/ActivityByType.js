@@ -4,15 +4,18 @@ import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { activityTypes } from '../../utils/Utils';
+import BoredButton from '../ui/BoredButton/BoredButton';
+import '../../style/type_page.css';
 
 const mapState = (state) => {
     return {
         activityData: state.activityData,
+        isLoading: state.isLoading,
     };
 };
 
 const ActivityByType = (props) => {
-    const { activityData, ...actions } = props;
+    const { activityData, isLoading, ...actions } = props;
 
     const [option, setOption] = useState('');
 
@@ -24,18 +27,22 @@ const ActivityByType = (props) => {
         actions.getActivityByType(option);
     };
     const selectChangeHandler = (e) => {
-        console.log(e.target.value);
         setOption(e.target.value);
     };
     return (
         <div className='activity-by-type-wrapper'>
-            <select onChange={selectChangeHandler} value={option}>
-                <option>{''}</option>
-                {activityTypes.map((activity) => (
-                    <option key={activity}>{activity}</option>
-                ))}
-            </select>
-            <Card buttonHandler={cardButtonClickHandler} data={activityData} />
+            <div className='select-wrapper'>
+                <label for='opt'>Choose Activity Type:</label>
+                <select onChange={selectChangeHandler} value={option} id='opt'>
+                    <option>{''}</option>
+                    {activityTypes.map((activity) => (
+                        <option key={activity}>{activity}</option>
+                    ))}
+                </select>
+            </div>
+
+            <Card data={activityData} isLoading={isLoading} />
+            <BoredButton onClick={cardButtonClickHandler}>One More</BoredButton>
         </div>
     );
 };

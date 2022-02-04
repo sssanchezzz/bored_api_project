@@ -3,11 +3,12 @@
     height: 25rem;
     background: linear-gradient(180deg, #78f2dc 0%, #b3c3ff 77.6%);
     display: flex;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     padding: 2rem;
     border: 10px solid white;
     border-radius: 20px;
     font-size: 0.9rem;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.25);
 }
 .card-activities-list {
     width: 100%;

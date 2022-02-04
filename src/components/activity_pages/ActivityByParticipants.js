@@ -4,16 +4,18 @@ import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
 import * as utils from '../../utils/Utils';
+import BoredButton from '../ui/BoredButton/BoredButton';
 
 const mapState = (state) => {
     return {
         activityData: state.activityData,
         error: state.error,
+        isLoading: state.isLoading,
     };
 };
 
 const ActivityByParticipants = (props) => {
-    const { activityData, error, ...actions } = props;
+    const { activityData, error, isLoading, ...actions } = props;
 
     const [inputRange, setInputRange] = useState(1);
 
@@ -50,7 +52,8 @@ const ActivityByParticipants = (props) => {
                 size='2'
             />
 
-            <Card buttonHandler={cardButtonClickHandler} data={activityData} />
+            <Card data={activityData} isLoading={isLoading} />
+            <BoredButton onClick={cardButtonClickHandler}>One More</BoredButton>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
 import * as utils from '../../utils/Utils';
+import BoredButton from '../ui/BoredButton/BoredButton';
 
 const mapState = (state) => {
     return {
@@ -50,7 +51,8 @@ const ActivityByPrice = (props) => {
                 onChange={inputTextHandler}
                 size='2'
             />
-            <Card buttonHandler={cardButtonClickHandler} data={activityData} />
+            <Card data={activityData} />
+            <BoredButton onClick={cardButtonClickHandler}>One More</BoredButton>
         </div>
     );
 };
