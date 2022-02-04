@@ -1,0 +1,43 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+.nav-wrapper {
+    width: 100%;
+    padding: 1rem 5rem;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+}
+.nav-ul {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    justify-content: space-between;
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+}
+.nav-ul li a {
+    text-shadow: 5px 5px 5px #ffffff;
+}
+.nav-logo {
+    font-family: 'Red Hat Display', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+.nav-logo h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    font-weight: black;
+    text-shadow: #ffffff 0px 0px 1px;
+    -webkit-font-smoothing: antialiased;
+}
+.nav-logo img {
+    width: 2.5rem;
+}
+.nav-logo-yellow {
+    color: #ffcf54;
+}

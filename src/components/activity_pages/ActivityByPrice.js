@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../Card';
+import Card from '../ui/Card/Card';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -15,7 +15,7 @@ const mapState = (state) => {
 const ActivityByPrice = (props) => {
     const { activityData, error, ...actions } = props;
 
-    const [inputRange, setInputRange] = useState(1);
+    const [inputRange, setInputRange] = useState(0);
 
     useEffect(() => {
         actions.getActivityByPrice(inputRange);

@@ -1,6 +1,7 @@
 import {
     ACTIVITY_REQUEST_FAILED,
     ACTIVITY_REQUEST_SUCCEEDED,
+    SET_IS_LOADING,
 } from '../actions';
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
         price: 0,
     },
     error: null,
+    isLoading: false,
 };
 
 const activityReducer = (state = initialState, action) => {
@@ -23,6 +25,8 @@ const activityReducer = (state = initialState, action) => {
             };
         case ACTIVITY_REQUEST_FAILED:
             return { ...state, error: action.payload };
+        case SET_IS_LOADING:
+            return { ...state, isLoading: action.payload };
         default:
             return state;
     }

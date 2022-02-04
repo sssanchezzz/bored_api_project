@@ -1,0 +1,6 @@
+.random-activity-wrapper {
+    /* background-color: violet; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

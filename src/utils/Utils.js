@@ -18,6 +18,6 @@ export const activityTypes = [
 ];
 export const minPrice = 0;
 export const maxPrice = 1;
-export const minParticipants = 0;
+export const minParticipants = 1;
 export const maxParticipants = 10;
 export const boredApiBaseUrl = 'http://www.boredapi.com/api/activity';

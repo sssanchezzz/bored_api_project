@@ -1,0 +1,32 @@
+.card-inner-container {
+    width: 17.5rem;
+    height: 25rem;
+    background: linear-gradient(180deg, #78f2dc 0%, #b3c3ff 77.6%);
+    display: flex;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    border: 10px solid white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+.card-activities-list {
+    width: 100%;
+    list-style: none;
+}
+.card-activities-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 0.5rem 0;
+}
+.card-div-left {
+    width: 30%;
+}
+.card-div-right {
+    width: 70%;
+    text-align: right;
+    justify-self: flex-end;
+}
+.card-error {
+    color: rgb(151, 13, 25);
+    font-weight: bold;
+}

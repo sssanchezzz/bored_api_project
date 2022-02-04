@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../Card';
+import Card from '../ui/Card/Card';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
