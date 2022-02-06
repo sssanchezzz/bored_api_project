@@ -36,14 +36,19 @@ const RandomActivity = (props) => {
         <div className='random-activity-wrapper'>
             <AnimatePresence exitBeforeEnter>
                 <motion.div
-                    animate={{ opacity: 1, y: 0 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.15 }}
+                    key={activityData.activity}
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 1 },
+                    }}
+                    initial={{ opacity: 0, y: '70vh' }}
+                    exit={{ opacity: 0, y: '-70vh' }}
                 >
                     <Card data={activityData} isLoading={isLoading} />
                 </motion.div>
             </AnimatePresence>
+
             <BoredButton onClick={cardButtonClickHandler}>One More</BoredButton>
         </div>
     );

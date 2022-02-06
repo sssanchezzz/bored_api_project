@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { activityTypes } from '../../utils/Utils';
 import BoredButton from '../ui/BoredButton/BoredButton';
 import '../../style/type_page.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const mapState = (state) => {
     return {
@@ -41,7 +42,20 @@ const ActivityByType = (props) => {
                 </select>
             </div>
 
-            <Card data={activityData} isLoading={isLoading} />
+            <AnimatePresence exitBeforeEnter>
+                <motion.div
+                    key={activityData.activity}
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 1 },
+                    }}
+                    initial={{ opacity: 0, y: '70vh' }}
+                    exit={{ opacity: 0, y: '-70vh' }}
+                >
+                    <Card data={activityData} isLoading={isLoading} />
+                </motion.div>
+            </AnimatePresence>
             <BoredButton onClick={cardButtonClickHandler}>One More</BoredButton>
         </div>
     );
