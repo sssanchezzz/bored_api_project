@@ -6,13 +6,13 @@ import { Routes, Route } from 'react-router-dom';
 import ActivityByParticipants from './activity_pages/ActivityByParticipants';
 import ActivityByPrice from './activity_pages/ActivityByPrice';
 import bg from '../img/bg_2x_cropped.png';
+import '../style/style.css';
 
 const MainPage = () => {
     return (
         <div className='main-page-wrapper'>
             <div className='main-page-inner-container'>
                 <Nav />
-
                 <Routes>
                     <Route path='/random' exact element={<RandomActivity />} />
                     <Route path='/by-type' exact element={<ActivityByType />} />

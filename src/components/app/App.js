@@ -1,14 +1,18 @@
 import { Provider } from 'react-redux';
 import store from '../store';
 import MainPage from '../MainPage';
-import { Router, Routes } from 'react-router-dom';
-import '../../style/style.css';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 function App() {
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        navigate('/random');
+    }, []);
+
     return (
         <Provider store={store}>
-            <div className='App'>
-                <MainPage />
-            </div>
+            <MainPage />
         </Provider>
     );
 }

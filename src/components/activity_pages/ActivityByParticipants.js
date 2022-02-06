@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
 import * as utils from '../../utils/Utils';
 import BoredButton from '../ui/BoredButton/BoredButton';
+import '../../style/participants_page.css';
 
 const mapState = (state) => {
     return {
@@ -36,20 +37,17 @@ const ActivityByParticipants = (props) => {
     };
 
     return (
-        <div className='activity-by-type-wrapper'>
+        <div className='activity-by-participants-wrapper'>
+            <h3>{inputRange}</h3>
+
             <input
+                className='activity-input-range'
                 type='range'
                 name='Participants'
                 onChange={inputRangeHandler}
                 value={inputRange}
                 min={utils.minParticipants}
                 max={utils.maxParticipants}
-            />
-            <input
-                type='text'
-                value={inputRange}
-                onChange={inputTextHandler}
-                size='2'
             />
 
             <Card data={activityData} isLoading={isLoading} />

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { useEffect } from 'react';
 import BoredButton from '../ui/BoredButton/BoredButton';
 import '../../style/random_page.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const mapState = (state) => {
     return {
@@ -33,7 +34,16 @@ const RandomActivity = (props) => {
     };
     return (
         <div className='random-activity-wrapper'>
-            <Card data={activityData} isLoading={isLoading} />
+            <AnimatePresence exitBeforeEnter>
+                <motion.div
+                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.15 }}
+                >
+                    <Card data={activityData} isLoading={isLoading} />
+                </motion.div>
+            </AnimatePresence>
             <BoredButton onClick={cardButtonClickHandler}>One More</BoredButton>
         </div>
     );

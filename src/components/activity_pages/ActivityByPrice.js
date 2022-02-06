@@ -36,6 +36,7 @@ const ActivityByPrice = (props) => {
 
     return (
         <div className='activity-by-type-wrapper'>
+            <h3>{inputRange}</h3>
             <input
                 type='range'
                 name='Price'
@@ -44,12 +45,6 @@ const ActivityByPrice = (props) => {
                 step='0.1'
                 min={utils.minPrice}
                 max={utils.maxPrice}
-            />
-            <input
-                type='text'
-                value={inputRange}
-                onChange={inputTextHandler}
-                size='2'
             />
             <Card data={activityData} />
             <BoredButton onClick={cardButtonClickHandler}>One More</BoredButton>
